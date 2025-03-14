@@ -176,7 +176,7 @@
         <ul class="nav bd-sidenav bd-sidenav__home-link">
             <li class="toctree-l1">
                 <a class="reference internal" href="intro.html">
-                    Welcome to your Jupyter Book
+                  Halaman Depan
                 </a>
             </li>
         </ul>
@@ -470,6 +470,34 @@ pada matriks hasil penjumlahan C adalah hasil penjumlahan elemen - elemen yang b
 6 &amp; 12
 \end{bmatrix}\)</span></p>
 </section>
+
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># implementasi ke python penjumlahan matriks</span>
+<span class="n">A</span><span class="o">=</span><span class="p">[[</span><span class="mi">1</span><span class="p">,</span><span class="mi">3</span><span class="p">],[</span><span class="mi">2</span><span class="p">,</span><span class="mi">4</span><span class="p">]]</span>
+<span class="n">B</span><span class="o">=</span><span class="p">[[</span><span class="mi">2</span><span class="p">,</span><span class="mi">6</span><span class="p">],[</span><span class="mi">4</span><span class="p">,</span><span class="mi">8</span><span class="p">]]</span>
+
+<span class="n">baris</span><span class="o">=</span><span class="nb">len</span><span class="p">(</span><span class="n">A</span><span class="p">)</span>
+<span class="n">kolom</span><span class="o">=</span><span class="nb">len</span><span class="p">(</span><span class="n">A</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+
+<span class="n">C</span><span class="o">=</span><span class="p">[]</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">baris</span><span class="p">):</span>
+    <span class="n">matbaru</span><span class="o">=</span><span class="p">[]</span>
+    <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span> <span class="p">(</span><span class="n">kolom</span><span class="p">):</span>
+        <span class="n">matbaru</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">A</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">j</span><span class="p">]</span> <span class="o">+</span> <span class="n">B</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">j</span><span class="p">])</span>
+    <span class="n">C</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">matbaru</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;hasil penjumlahan matriks A + B adalah: &#39;</span><span class="p">,</span> <span class="n">C</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>hasil penjumlahan matriks A + B adalah:  [[3, 9], [6, 12]]
+</pre></div>
+</div>
+</div>
+</div>
+
 <section id="perkalian-matriks">
 <h3>2. Perkalian Matriks<a class="headerlink" href="#perkalian-matriks" title="Link to this heading">#</a></h3>
 <p><strong>Konsep perkalian matriks:</strong></p>
@@ -545,6 +573,32 @@ c_{31} &amp; c_{32} &amp; c_{33}
 43 &amp; 43 &amp; 38
 \end{bmatrix}\)</span></p>
 </section>
+
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># implementasi ke python perkalian matriks</span>
+<span class="n">A</span><span class="o">=</span><span class="p">[[</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">],[</span><span class="mi">1</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">5</span><span class="p">],[</span><span class="mi">4</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">6</span><span class="p">]]</span>
+<span class="n">B</span><span class="o">=</span><span class="p">[[</span><span class="mi">1</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">2</span><span class="p">],[</span><span class="mi">3</span><span class="p">,</span><span class="mi">7</span><span class="p">,</span><span class="mi">2</span><span class="p">],[</span><span class="mi">5</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">4</span><span class="p">]]</span>
+<span class="n">C</span><span class="o">=</span><span class="p">[]</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">A</span><span class="p">)):</span>
+  <span class="n">temp</span><span class="o">=</span><span class="p">[]</span>
+  <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">B</span><span class="p">[</span><span class="mi">0</span><span class="p">])):</span>
+    <span class="n">total</span><span class="o">=</span><span class="mi">0</span>
+    <span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">B</span><span class="p">)):</span>
+      <span class="n">total</span><span class="o">=</span><span class="n">total</span><span class="o">+</span><span class="p">(</span><span class="n">A</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">k</span><span class="p">]</span> <span class="o">*</span> <span class="n">B</span><span class="p">[</span><span class="n">k</span><span class="p">][</span><span class="n">j</span><span class="p">])</span>
+    <span class="n">temp</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">total</span><span class="p">)</span>
+  <span class="n">C</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">temp</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;hasil perkalian matriks A x B adalah: &#39;</span><span class="p">,</span> <span class="n">C</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>hasil perkalian matriks A x B adalah:  [[31, 33, 26], [35, 30, 28], [43, 43, 38]]
+</pre></div>
+</div>
+</div>
+</div>
+
 <section id="perkalian-skalar-matriks">
 <h3>3. Perkalian Skalar Matriks<a class="headerlink" href="#perkalian-skalar-matriks" title="Link to this heading">#</a></h3>
 <p><strong>Konsep perkalian skalar matriks:</strong></p>
