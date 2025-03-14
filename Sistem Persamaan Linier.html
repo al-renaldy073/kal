@@ -1,0 +1,689 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="./" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Sistem persamaan linier &#8212; My sample book</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+
+  
+  <link href="_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="_static/styles/sphinx-book-theme.css?v=eba8b062" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-design.min.css?v=95c83b7e" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+    <script src="_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="_static/doctools.js?v=9a2dae69"></script>
+    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="_static/copybutton.js?v=f281be69"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="_static/togglebutton.js?v=4a39c7ea"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'Sistem Persamaan Linier';</script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Penyelesaian Sistem Persamaan Linier" href="Penyelesaian%20Sistem%20Persamaan%20Linier.html" />
+    <link rel="prev" title="Welcome to your Jupyter Book" href="intro.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="intro.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="_static/logo.png" class="logo__image only-light" alt="My sample book - Home"/>
+    <script>document.write(`<img src="_static/logo.png" class="logo__image only-dark" alt="My sample book - Home"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="intro.html">
+                    Welcome to your Jupyter Book
+                </a>
+            </li>
+        </ul>
+        <ul class="current nav bd-sidenav">
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Sistem persamaan linier</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Penyelesaian%20Sistem%20Persamaan%20Linier.html">Penyelesaian Sistem Persamaan Linier</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Matriks%20%282%29.html">Matriks</a></li>
+
+
+
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/executablebooks/jupyter-book" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2FSistem Persamaan Linier.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="_sources/Sistem Persamaan Linier.md" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.md</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Sistem persamaan linier</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#definisi-sistem-persamaan-linier">Definisi Sistem Persamaan Linier</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#solusi-persamaan-linier">Solusi Persamaan Linier</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#eliminasi">Eliminasi</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#eliminasi-gaus">Eliminasi Gaus</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#h3solusi-grafik">h3Solusi Grafik</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#refrensi">Refrensi</a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="sistem-persamaan-linier">
+<h1>Sistem persamaan linier<a class="headerlink" href="#sistem-persamaan-linier" title="Link to this heading">#</a></h1>
+<p>Sistem persamaan linear sendiri merupakan suatu persamaan aljabar. Aljabar adalah cabang matematika yang menggunakan simbol dan huruf tertentu untuk mewakili nilai dari suatu materi.</p>
+<section id="definisi-sistem-persamaan-linier">
+<h2>Definisi Sistem Persamaan Linier<a class="headerlink" href="#definisi-sistem-persamaan-linier" title="Link to this heading">#</a></h2>
+<p>Dikutip dari buku Linear Programming dengan R: Aplikasi untuk Teknik Industri karya Ilyas Masudin, Muhammad Faisal Ibrahim, Gilang Yandeza, persamaan linear adalah sistem persamaan aljabar yang pada setiap sukunya mengandung konstanta, atau perkalian konstanta dengan variabel tunggal.
+Persamaan tersebut dikatakan linear sebab hubungan matematis ini dapat digambarkan sebagai garis lurus.</p>
+<p>Berdasarkan penjelasan di atas, sistem persamaan linear pada umumnya memiliki variabel tunggal. Namun, ada beberapa jenis sistem persamaan linear yang memiliki variabel yang lebih dari satu, yakni sistem persamaan linear dua variabel atau SPLDV dan sistem persamaan linear tiga variabel atau SPLTV.</p>
+<p><strong><span class="math notranslate nohighlight">\(ax + b = 0\)</span>, dengan catatan <span class="math notranslate nohighlight">\(a ≠ 0 dan b = konstanta dan penyelesaian: \)</span>x = - b/a$.</strong></p>
+<p>Mengutip dari buku <em>Matematika</em> karya Ir. Sugiyono, untuk dapat memahami sistem persamaan linear, berikut contoh soal beserta cara menyelesaikannya.
+<img alt="as2zip8tbpgarnb7scik" src="https://hackmd.io/_uploads/rJMGcmf9yl.png" />
+Sebelum beralih ke contoh soal, sekiranya penting untuk mengetahui bentuk umum dari sistem persamaan linear. Adapun bentuk umum dari sistem persamaan linear ialah:</p>
+<p><strong>Contoh 1</strong>
+Jika x + 1 = 5, berapakah nilai x?
+Penyelesaian:
+x + 1 = 5
+x = 5-1
+x = 4</p>
+</section>
+<section id="solusi-persamaan-linier">
+<h2>Solusi Persamaan Linier<a class="headerlink" href="#solusi-persamaan-linier" title="Link to this heading">#</a></h2>
+<p>Solusi dari persamaan linear <span class="math notranslate nohighlight">\(𝑎1𝑥1 + 𝑎2𝑥2 + ⋯ + 𝑎𝑛𝑥𝑛 = 𝑏\)</span>
+adalah suatu urutan dari 𝑛 bilangan <span class="math notranslate nohighlight">\(𝑠1, 𝑠2, … , 𝑠𝑛\)</span> sedemikian
+rupa sehingga persamaan tersebut akan terpenuhi jika kita
+menggantikan <span class="math notranslate nohighlight">\(𝑥1 = 𝑠1, 𝑥2 = 𝑠2, … 𝑥𝑛 = 𝑠𝑛.\)</span> Kumpulan semua
+solusi dan persamaan itu disebut <strong>himpunan solusi (solution
+set) atau solusi umum (general solution)</strong> dari persamaan
+tersebut.</p>
+<p><em>Mencari Himpuna Solusi</em>
+Tentukan himpunan solusi untuk</p>
+<hr class="docutils" />
+<p><span class="math notranslate nohighlight">\(a) 4𝑥 − 2𝑦 = 1\)</span>
+<span class="math notranslate nohighlight">\(b) 𝑥1 − 4𝑥2 + 7𝑥3 = 5\)</span></p>
+<hr class="docutils" />
+<ol class="arabic">
+<li><p>Untuk mencari solusi, Kita dapat menetapkan nilai sebarang untuk 𝑥 dan menyelesaikan
+persamaan untuk memperoleh 𝑦 atau kita menetapkan nilai sebarang untuk 𝑦 dan
+menyelesaikan persamaan untuk memperoleh 𝑥.
+Misal 𝑥 = 𝑡 maka</p>
+<p><span class="math notranslate nohighlight">\(\begin{aligned}
+ 4t - 2y &amp;= 1 \\
+ -2y &amp;= 1 - 4t \\
+ y &amp;= 2t - \frac{1}{2}
+\end{aligned}\)</span></p>
+<p>Jika <span class="math notranslate nohighlight">\(𝑡 = 3\)</span> maka <span class="math notranslate nohighlight">\(𝑦 = 2 (3) - \frac{1}{2} =\frac{11}{2}\)</span></p>
+<p>Misal <span class="math notranslate nohighlight">\(𝑦 = 𝑡\)</span> maka</p>
+<p><span class="math notranslate nohighlight">\(\begin{aligned}
+ 4x - 2t &amp;= 1 \\
+ 4x &amp;= 2t - 1 \\
+ x &amp;= \frac{1}{2}t - \frac{1}{4}
+\end{aligned}\)</span></p>
+</li>
+<li><p>Untuk mencari solusi kita dapat menetapkan nilai sebarang dua variable dan
+menyelesaikan persamaan tersebut untuk variable ketiga. Misal, jika kita menetapkan nilai
+sebarang <span class="math notranslate nohighlight">\(𝑠\)</span> dan <span class="math notranslate nohighlight">\(𝑡\)</span>, berturut-turut untuk <span class="math notranslate nohighlight">\(𝑥_2\)</span> dan <span class="math notranslate nohighlight">\(𝑥_3\)</span> dan menyelesaikan <span class="math notranslate nohighlight">\(𝑥_1\)</span> maka kita peroleh</p>
+<p><span class="math notranslate nohighlight">\(x_1 = 5 + 4s - 7t, \quad x_2 = s, \quad x_3 = t\)</span></p>
+<p>Himpunan terbatas dari persamaan linear dalam variable <span class="math notranslate nohighlight">\(𝑥_1, 𝑥_2 … , 𝑥\)</span> disebut <strong>sistem persamaan linear atau sistem linear.</strong></p>
+</li>
+</ol>
+<p>Secara umum, sistem linear dari 𝑚 persamaan dengan variable 𝑛 tak diketahui dapat ditulis sebagai:</p>
+<p>\begin{aligned}
+a_{11}x_1 + a_{12}x_2 + \cdots + a_{1n}x_n &amp;= b_1 \
+a_{21}x_1 + a_{22}x_2 + \cdots + a_{2n}x_n &amp;= b_2 \
+\vdots \quad &amp;\quad \vdots \quad \vdots \
+a_{m1}x_1 + a_{m2}x_2 + \cdots + a_{mn}x_n &amp;= b_m
+\end{aligned}</p>
+<p>Dimana <span class="math notranslate nohighlight">\(𝑥_1, 𝑥_2 … , 𝑥_𝑛\)</span> merupakan variable dan 𝑎 dan 𝑏 merupakan konstanta.</p>
+<p>Urutan sejumlah bilangan <span class="math notranslate nohighlight">\(𝑠_1, 𝑠_2, … , 𝑠_𝑛\)</span> merupakan solusi dari sistem persamaan linear jika
+<span class="math notranslate nohighlight">\(𝑥_1 = 𝑠_1, 𝑥_2 = 𝑠_2, … , 𝑥_𝑛 = 𝑠_𝑛\)</span> merupakan solusi dari setiap persamaan di dalam sistem tersebut.</p>
+<p><strong>Suatu sistem persamaan Linear dapat tidak memiliki solusi, memiliki tepat satu solusi
+atau memiliki tak hingga banyak solusi.</strong></p>
+<p>Suatu sistem persamaan yang tidak memiliki solusi disebut <strong>tidak konsisten (inconsistent)</strong>, Sedangkan jika terdapat paling tidak satu solusi dalam sistem disebut <strong>konsisten.</strong></p>
+<p><img alt="Cuplikan layar 2025-02-23 073109" src="https://hackmd.io/_uploads/rkIw31ucJg.png" />
+<strong>Tidak Punya Solusi</strong>
+Garis <span class="math notranslate nohighlight">\(𝑙_1\)</span> dan <span class="math notranslate nohighlight">\(𝑙_2\)</span> mungkin sejajar, yang berarti kedua garis tidak berpotongan dansebagai konsekuensinya sistem tidak memiliki solusi.</p>
+<p><img alt="Cuplikan layar 2025-02-23 073342" src="https://hackmd.io/_uploads/H1bZaydc1x.png" />
+<strong>Memiliki Satu Solusi</strong>
+Garis <span class="math notranslate nohighlight">\(𝑙_1\)</span> dan <span class="math notranslate nohighlight">\(𝑙_2\)</span>, mungkin berpotongan hanya pada 1 titik, yang berarti sistem hanyamemiliki tepat satu solusi.</p>
+<p><img alt="Cuplikan layar 2025-02-23 073533" src="https://hackmd.io/_uploads/B1VvaJdqyx.png" />
+<strong>Memiliki Tak Hingga Solusi</strong>
+Garis <span class="math notranslate nohighlight">\(𝑙_1\)</span> dan <span class="math notranslate nohighlight">\(𝑙_2\)</span> , mungkin berhimpitan, yang berarti jumlah titik potongnya tak terhingga dan sebagai konsekuensi terdapat tak terhingga banyaknya solusi untuk sistem tersebut.</p>
+<hr class="docutils" />
+<p><strong>Contoh: Sistem Linear dengan satu Solusi</strong>
+Selesaikan sistem persamaan linear berikut:</p>
+<p><span class="math notranslate nohighlight">\(𝑥 − 𝑦 = 1\)</span>
+<span class="math notranslate nohighlight">\(2𝑥 + 𝑦 = 6\)</span></p>
+<p>Penyelesaian:
+Eliminasikan variable <span class="math notranslate nohighlight">\(𝑥\)</span> dengan menambahkan <span class="math notranslate nohighlight">\(− 2\)</span> kali persamaan pertama dengan persamaan kedua. Sehingga menghasilkan</p>
+<p><span class="math notranslate nohighlight">\(𝑥 − 𝑦 = 1\)</span>
+<span class="math notranslate nohighlight">\(3𝑦 = 4\)</span></p>
+<p>Kita peroleh <span class="math notranslate nohighlight">\(𝑦 = 4/3\)</span> . Subsitusikan nilai tersebut ke persamaan pertama <span class="math notranslate nohighlight">\(𝑥 = 1 + 𝑦 = 1 + \frac{4}{3} = \frac{7}{3}\)</span>. Sehingga persamaan memiliki solusi
+Tunggal.</p>
+<hr class="docutils" />
+<p><strong>Contoh: Sistem Linear dengan Tanpa
+Solusi</strong>
+Selesaikan sistem linear berikut:</p>
+<p><span class="math notranslate nohighlight">\(𝑥 + 𝑦 = 4\)</span>
+<span class="math notranslate nohighlight">\(3𝑥 + 3𝑦 = 9\)</span></p>
+<p>Penyelesaian:
+Eliminasikan variable <span class="math notranslate nohighlight">\(𝑥\)</span> dengan menambahkan <span class="math notranslate nohighlight">\(−3\)</span> kali persamaan pertama dengan persamaan kedua. Sehingga menghasilkan</p>
+<p><span class="math notranslate nohighlight">\(𝑥 + 𝑦 = 4\)</span>
+<span class="math notranslate nohighlight">\(0 = −3\)</span></p>
+<p>Persamaan kedua inkonsisten, jadi sistem persamaan yang diberikan tidak memiliki solusi.</p>
+<hr class="docutils" />
+<p><em>Contoh: Sistem Linear dengan solusi tak hingga</em>
+Selesaikan sistem linear berikut:</p>
+<p><span class="math notranslate nohighlight">\(2𝑥 − 4𝑦 = 1\)</span>
+<span class="math notranslate nohighlight">\(8𝑥 − 16𝑦 = 4\)</span></p>
+<p>Eliminasi variable <span class="math notranslate nohighlight">\(𝑥\)</span> dengan menambahkan <span class="math notranslate nohighlight">\(−4\)</span> kali persamaan pertama dengan persamaan kedua. Sehingga menghasilkan</p>
+<p><span class="math notranslate nohighlight">\(2𝑥 − 4𝑦 = 1\)</span>
+<span class="math notranslate nohighlight">\(0 = 0\)</span></p>
+<p>Dengan demikian</p>
+<p><span class="math notranslate nohighlight">\(x = \frac{1}{2} + 2y\)</span></p>
+<p>Misalkan <span class="math notranslate nohighlight">\(𝑦 = 𝑡\)</span> maka <span class="math notranslate nohighlight">\(𝑥 = \frac{1}{2} + 2t\)</span></p>
+<p>Dari bentuk tersebut kita memperoleh banyak solusi secara spesifik dari persamaan ini dengan mensubtitusi nilai-nilai untuk paramaternya. Contoh: <span class="math notranslate nohighlight">\(𝑡 = 0\)</span> maka <span class="math notranslate nohighlight">\(𝑥 = \frac{1}{2} ,t = 1\)</span> maka <span class="math notranslate nohighlight">\(𝑥 = 5/2.\)</span></p>
+<section id="eliminasi">
+<h3>Eliminasi<a class="headerlink" href="#eliminasi" title="Link to this heading">#</a></h3>
+<p>Metode ini bekerja dengan cara mengeliminasi (menghilangkan) variabel-variabel di dalam sistem persamaan hingga hanya satu variabel yang tertinggal.</p>
+<p>Pertama-tama, lihat persamaan-persamaan yang ada dan coba cari dua persamaan yang mempunyai koefisien yang sama (baik positif maupun negatif) untuk variabel yang sama. Misalnya, lihat persamaan <span class="math notranslate nohighlight">\((1)\)</span> dan <span class="math notranslate nohighlight">\((3)\)</span>.Koefisien untuk <span class="math notranslate nohighlight">\(y\)</span> adalah <span class="math notranslate nohighlight">\(1\)</span> dan <span class="math notranslate nohighlight">\(−1\)</span> untuk masing-masing persamaan. Kita dapat menjumlah kedua persamaan ini untuk menghilangkan <span class="math notranslate nohighlight">\(y\)</span> dan kita mendapatkan persamaan <span class="math notranslate nohighlight">\((4)\)</span>.</p>
+<p><img alt="upload_1072bb644df09b0c9c54d7dc79a99ed0" src="https://hackmd.io/_uploads/rk4TYlOqkl.png" /></p>
+<p>Perhatikan bahwa persamaan <span class="math notranslate nohighlight">\((4)\)</span> terdiri atas variabel <span class="math notranslate nohighlight">\(x\)</span> dan <span class="math notranslate nohighlight">\(z\)</span>. Sekarang kita perlu persamaan lain yang terdiri atas variabel yang sama dengan persamaan<span class="math notranslate nohighlight">\((4)\)</span>.Untuk mendapatkan persamaan ini, kita akan menghilangkan <span class="math notranslate nohighlight">\(y\)</span> dari persamaan <span class="math notranslate nohighlight">\((1)\)</span>dan <span class="math notranslate nohighlight">\((2)\)</span>. Dalam persamaan <span class="math notranslate nohighlight">\((1)\)</span> dan <span class="math notranslate nohighlight">\((2)\)</span>, koefisien untuk <span class="math notranslate nohighlight">\(y\)</span> adalah 1 dan 3 masing-masing. Untuk menghilangkan <span class="math notranslate nohighlight">\(y\)</span>, kita kalikan persamaan <span class="math notranslate nohighlight">\((1)\)</span> dengan <span class="math notranslate nohighlight">\(3\)</span> lalu mengurangkan persamaan <span class="math notranslate nohighlight">\((2)\)</span> dari persamaan <span class="math notranslate nohighlight">\((1)\)</span>.</p>
+<p><img alt="upload_e189b88ad14dafd653a04146d781bb58" src="https://hackmd.io/_uploads/SycKqgd5ke.png" /></p>
+<p>Dengan persamaan <span class="math notranslate nohighlight">\((4)\)</span> dan <span class="math notranslate nohighlight">\((5)\)</span>, mari kita coba untuk menghilangkan <span class="math notranslate nohighlight">\(z\)</span>.</p>
+<p><img alt="upload_50fef1ae76c909a8f1392a3b0bb7aa6d" src="https://hackmd.io/_uploads/SyYCcgd5kx.png" /></p>
+<p>Dari persamaan <span class="math notranslate nohighlight">\((6)\)</span> kita dapatkan <span class="math notranslate nohighlight">\(x = 2\)</span>. Sekarang kita bisa subtitusikan (masukkan) nilai dari <span class="math notranslate nohighlight">\(x\)</span> ke persamaan <span class="math notranslate nohighlight">\((4)\)</span> untuk mendapatkan nilai <span class="math notranslate nohighlight">\(z\)</span>.</p>
+<p><img alt="upload_ab822f283c5c419b89a06a24e6862f11" src="https://hackmd.io/_uploads/ByvVsl_c1x.png" /></p>
+<p>Akhirnya, kita substitusikan (masukkan) nila dari <span class="math notranslate nohighlight">\(x\)</span> dan <span class="math notranslate nohighlight">\(z\)</span> ke persamaan <span class="math notranslate nohighlight">\((1)\)</span> untuk mendapatkan <span class="math notranslate nohighlight">\(y\)</span>.</p>
+<p><img alt="upload_7517237020e0f89b91e8531cfb35befe" src="https://hackmd.io/_uploads/B188ild5kl.png" /></p>
+<p>Jadi solusi sistem persamaan linier di atas adalah <span class="math notranslate nohighlight">\(x = 2, y = 3, z = 4\)</span>.</p>
+</section>
+<section id="eliminasi-gaus">
+<h3>Eliminasi Gaus<a class="headerlink" href="#eliminasi-gaus" title="Link to this heading">#</a></h3>
+<p>Sistem persamaan liniear yang terdiri atas persamaan-persamaan <span class="math notranslate nohighlight">\((1), (2)\)</span> dan <span class="math notranslate nohighlight">\((3)\)</span> dapat juga dinyatakan dalam bentuk matriks teraugmentasi seperti berikut</p>
+<p><img alt="upload_4944d6b5adbc48f1db7c7ecf4cdbccf5" src="https://hackmd.io/_uploads/BJnJheO9kg.png" /></p>
+<p>Dengan melakukan serangkaian operasi baris (Eliminasi Gauss), kita dapat menyederhanakan matriks di atas untuk menjadi matriks Eselon-baris.</p>
+<p><img alt="upload_3d6a6c26fb2e311ee99648cf3ed22906" src="https://hackmd.io/_uploads/B1Dl2g_5Jl.png" /></p>
+<p>Kemudian kita bisa substitusikan kembali nilai-nilai yang kita dapat untuk mencari nilai dari semua variabel. Atau, kita juga bisa meneruskan dengan serangkaian operasi baris lagi sehingga matriks di atas menjadi matriks yang Eselon-baris tereduksi (dengan menggunakan Eliminasi Gauss-Jordan).</p>
+<p><img alt="upload_ee950f6dfa7e887a6aa38a13edd9f314" src="https://hackmd.io/_uploads/BJTZ3gu9kl.png" /></p>
+<p>Dengan melakukan operasi Eliminasi Gauss-Jordan, kita mendapatkan solusi dari sistem persamaan linier di atas pada kolom terakhir: <span class="math notranslate nohighlight">\(x = 2, y = 3, z = 4.\)</span></p>
+</section>
+<section id="h3solusi-grafik">
+<h3>h3Solusi Grafik<a class="headerlink" href="#h3solusi-grafik" title="Link to this heading">#</a></h3>
+<p>Penyelesaian sistem persamaan linier dengan metode grafik dilakukan dengan cara menggambar garis garis atau bidang planar yang merupakan representasi dari persamaan-persamaan yang ada dalam sistem tersebut. Solusinya adalah koordinat-koordinat yang merupakan titik potong dari garis-garis ataupun bidang-bidang planar itu.</p>
+<p>Sebagai contoh, marilah kita lihat sistem persamaan liniear dengan dua variabel berikut ini.</p>
+<p><img alt="upload_19675a5d9e1ed893095f73e85b4ba7f1" src="https://hackmd.io/_uploads/BkfP2ldcyg.png" /></p>
+<p>Gambar kedua garis dari persamaan-persamaan di atas.</p>
+<p><img alt="upload_b986ac74b51191f5c91de1b4a77f3e5e" src="https://hackmd.io/_uploads/BJsvhlOqye.gif" /></p>
+<p>Seperti terlihat pada grafik di atas, kedua garis itu bertemu (mempunyai titik potong) pada titik <span class="math notranslate nohighlight">\((0,3)\)</span>. Ini adalah solusi dari sistem persamaan linier tersebut, yaitu <span class="math notranslate nohighlight">\(x = 0, y = 3.\)</span></p>
+<p>Untuk persamaan linier dengan tiga variabel, solusinya adalah titik pertemuan dari tiga bidang planar dari masing-masing persamaan.</p>
+</section>
+</section>
+<section id="refrensi">
+<h2>Refrensi<a class="headerlink" href="#refrensi" title="Link to this heading">#</a></h2>
+<p><a class="reference external" href="https://kumparan.com/kabar-harian/sistem-persamaan-linear-dan-contoh-soalnya-1wlO01qJrrk">https://kumparan.com/kabar-harian/sistem-persamaan-linear-dan-contoh-soalnya-1wlO01qJrrk</a></p>
+<p><a class="reference external" href="https://lmsspada.kemdiktisaintek.go.id/pluginfile.php/727301/mod_resource/content/3/Pengantar%20Sistem%20Persamaan%20Linear.pdf">https://lmsspada.kemdiktisaintek.go.id/pluginfile.php/727301/mod_resource/content/3/Pengantar Sistem Persamaan Linear.pdf</a></p>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="intro.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Welcome to your Jupyter Book</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="Penyelesaian%20Sistem%20Persamaan%20Linier.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Penyelesaian Sistem Persamaan Linier</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#definisi-sistem-persamaan-linier">Definisi Sistem Persamaan Linier</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#solusi-persamaan-linier">Solusi Persamaan Linier</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#eliminasi">Eliminasi</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#eliminasi-gaus">Eliminasi Gaus</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#h3solusi-grafik">h3Solusi Grafik</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#refrensi">Refrensi</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By The Jupyter Book Community
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2023.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>
