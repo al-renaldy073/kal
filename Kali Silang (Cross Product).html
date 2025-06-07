@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>Penyelesaian Sistem Persamaan Linier &#8212; My sample book</title>
+    <title>Perkalian Silang (Cross Product) &#8212; My sample book</title>
   
   
   
@@ -32,7 +32,7 @@
     <link rel="stylesheet" type="text/css" href="_static/styles/sphinx-book-theme.css?v=eba8b062" />
     <link rel="stylesheet" type="text/css" href="_static/togglebutton.css?v=13237357" />
     <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
-    <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
     <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css?v=4fa983c6" />
     <link rel="stylesheet" type="text/css" href="_static/sphinx-design.min.css?v=95c83b7e" />
   
@@ -59,11 +59,10 @@
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
     <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-    <script>DOCUMENTATION_OPTIONS.pagename = 'Penyelesaian Sistem Persamaan Linier';</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'Kali Silang (Cross Product)';</script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="Matriks" href="Matriks (1).html" />
-    <link rel="prev" title="Sistem persamaan linier" href="Sistem%20Persamaan%20Linier.html" />
+    <link rel="prev" title="Perkalian titik (Dot product)" href="Perkalian%20Titik%20%28DOT%20PRODUCT%29.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -155,8 +154,8 @@
       
     
     
-    <img src="_static/logo1.png" class="logo__image only-light" alt="My sample book - Home"/>
-    <script>document.write(`<img src="_static/logo1.png" class="logo__image only-dark" alt="My sample book - Home"/>`);</script>
+    <img src="_static/logo.png" class="logo__image only-light" alt="My sample book - Home"/>
+    <script>document.write(`<img src="_static/logo.png" class="logo__image only-dark" alt="My sample book - Home"/>`);</script>
   
   
 </a></div>
@@ -177,22 +176,19 @@
         <ul class="nav bd-sidenav bd-sidenav__home-link">
             <li class="toctree-l1">
                 <a class="reference internal" href="intro.html">
-                  Halaman Depan
+                    Halaman Depan
                 </a>
             </li>
         </ul>
         <ul class="current nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="Sistem%20Persamaan%20Linier.html">Sistem persamaan linier</a></li>
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">Penyelesaian Sistem Persamaan Linier</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Penyelesaian%20Sistem%20Persamaan%20Linier.html">Penyelesaian Sistem Persamaan Linier</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Matriks (1).html">Matriks</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Transformasi Linier (1).html">Pembuktian Transformasi Linier</a></li>
 <li class="toctree-l1"><a class="reference internal" href="transformasi.html">Refleksi</a></li>
-<li class="toctree-l1"><a class="reference internal" href="Eigenvalues And Eigenvector.html">Eigenvalues And Eigenvector</a></li>
-<li class="toctree-l1"><a class="reference internal" href="Perkalian Titik (DOT PRODUCT).html">Perkalian Titik (DOT PRODUCT)</a></li>
-<li class="toctree-l1"><a class="reference internal" href="Kali Silang (Cross Product).html">Kali Silang (Cross Product)</a></li>
-
-
-
+<li class="toctree-l1"><a class="reference internal" href="Eigenvalues And Eigenvector.html">Eigenvalues dan Eigenvector</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Perkalian%20Titik%20%28DOT%20PRODUCT%29.html">Perkalian titik (Dot product)</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Perkalian Silang (Cross Product)</a></li>
 </ul>
 
     </div>
@@ -264,7 +260,7 @@
       
       
       
-      <li><a href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2FPenyelesaian Sistem Persamaan Linier.html&body=Your%20issue%20content%20here." target="_blank"
+      <li><a href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2FKali Silang (Cross Product).html&body=Your%20issue%20content%20here." target="_blank"
    class="btn btn-sm btn-source-issues-button dropdown-item"
    title="Open an issue"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -294,7 +290,7 @@
       
       
       
-      <li><a href="_sources/Penyelesaian Sistem Persamaan Linier.md" target="_blank"
+      <li><a href="_sources/Kali Silang (Cross Product).ipynb" target="_blank"
    class="btn btn-sm btn-download-source-button dropdown-item"
    title="Download source file"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -304,7 +300,7 @@
 <span class="btn__icon-container">
   <i class="fas fa-file"></i>
   </span>
-<span class="btn__text-container">.md</span>
+<span class="btn__text-container">.ipynb</span>
 </a>
 </li>
       
@@ -378,7 +374,7 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Penyelesaian Sistem Persamaan Linier</h1>
+    <h1>Perkalian Silang (Cross Product)</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -388,8 +384,8 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#operasi-baris-elemeneter">Operasi Baris Elemeneter</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#eleminasi-gauss">Eleminasi Gauss</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#definisi-hasil-kali-silang">Definisi Hasil Kali Silang</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#contoh-menghitung-hasil-kali-silang">Contoh Menghitung Hasil Kali Silang</a></li>
 </ul>
             </nav>
         </div>
@@ -401,189 +397,133 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section id="penyelesaian-sistem-persamaan-linier">
-<h1>Penyelesaian Sistem Persamaan Linier<a class="headerlink" href="#penyelesaian-sistem-persamaan-linier" title="Link to this heading">#</a></h1>
-<section id="operasi-baris-elemeneter">
-<h2>Operasi Baris Elemeneter<a class="headerlink" href="#operasi-baris-elemeneter" title="Link to this heading">#</a></h2>
+  <section class="tex2jax_ignore mathjax_ignore" id="perkalian-silang-cross-product">
+<h1>Perkalian Silang (Cross Product)<a class="headerlink" href="#perkalian-silang-cross-product" title="Link to this heading">#</a></h1>
+<p><strong>Definisi:</strong>
+Perkalian silang (cross product) adalah operasi antara dua vektor di ruang tiga dimensi (<span class="math notranslate nohighlight">\(\mathbb{R}^{3}\)</span>) yang menghasilkan vektor baru yang:</p>
+<ul>
+<li><p>Tegak lurus terhadap kedua vektor asal,</p></li>
+<li><p>Arah ditentukan oleh aturan tangan kanan (right-hand rule),</p></li>
+<li><p>Panjang vektor hasilnya sebesar:</p>
+<p><span class="math notranslate nohighlight">\(|\vec{u} \times \vec{v}| = |\vec{u}| \cdot |\vec{v}| \cdot \sin \theta\)</span></p>
+<p>di mana <span class="math notranslate nohighlight">\(\theta\)</span> adalah sudut antara <span class="math notranslate nohighlight">\(\vec{u}\)</span> dan <span class="math notranslate nohighlight">\(\vec{v}\)</span>.</p>
+</li>
+</ul>
+<section id="definisi-hasil-kali-silang">
+<h2>Definisi Hasil Kali Silang<a class="headerlink" href="#definisi-hasil-kali-silang" title="Link to this heading">#</a></h2>
+<p>Misalkan <span class="math notranslate nohighlight">\(\vec{u} =
+\begin{bmatrix}
+\mathbf{u_1} \\
+\mathbf{u_2} \\
+\mathbf{u_3}
+\end{bmatrix}
+.\)</span> dan <span class="math notranslate nohighlight">\(\vec{v} =
+\begin{bmatrix}
+\mathbf{v_1} \\
+\mathbf{v_2} \\
+\mathbf{v_3}
+\end{bmatrix}\)</span> adalah vektor-vektor di <span class="math notranslate nohighlight">\(\mathbb{R}^{3}\)</span>.
+<strong>Hasil kali silang</strong> dari u dan v dinotasikan sebagai <span class="math notranslate nohighlight">\(\vec{u} \times \vec{v}\)</span>, adalah vektor.</p>
+<p><span class="math notranslate nohighlight">\(\vec{u} \times \vec{v} =
+\begin{bmatrix}
+\mathbf{u_2 v_3 - u_3v_2} \\
+\mathbf{-(u_1v_3 -u_3v_1)} \\
+\mathbf{u_1 v_2 - u_2v_1}
+\end{bmatrix}\)</span></p>
 </section>
-<section id="eleminasi-gauss">
-<h2>Eleminasi Gauss<a class="headerlink" href="#eleminasi-gauss" title="Link to this heading">#</a></h2>
-<hr class="docutils" />
-<p><strong>Contoh Soal 1</strong>
-Selesaikan dengan menggunakan eleminasi gauss</p>
-<div class="math notranslate nohighlight">
-\[\begin{split}
-\begin{array}{cc}
-x_1 + 2x_2 + 3x_3=6\\
-2x_1 +4x_2+6x_3=12\\
-x_3 + x_2 =2\\
-\end{array}
-\end{split}\]</div>
-<p><strong>Jawaban:</strong></p>
-<p><strong>Langkah 1: Tulis dalam bentuk matriks</strong>
+<section id="contoh-menghitung-hasil-kali-silang">
+<h2>Contoh Menghitung Hasil Kali Silang<a class="headerlink" href="#contoh-menghitung-hasil-kali-silang" title="Link to this heading">#</a></h2>
+<p>Misalkan <span class="math notranslate nohighlight">\(\vec{u} =
 \begin{bmatrix}
-1 &amp; 2 &amp; 3 &amp;| &amp; 6 \\
-2 &amp; 4 &amp; 6 &amp;| &amp; 12\\
-0 &amp; 1 &amp; 1 &amp;| &amp; 2
-\end{bmatrix}</p>
-<p><strong>Langkah 2: Eliminasi</strong></p>
-<ul class="simple">
-<li><p>Baris 2 dikurangi 2 × Baris 1 untuk membuat elemen (2,1) menjadi 0:
+2 \\
+-1 \\
+4
+\end{bmatrix}\)</span> dan <span class="math notranslate nohighlight">\(\vec{v} =
 \begin{bmatrix}
-1 &amp; 2 &amp; 3 &amp;| &amp; 6 \\
-0 &amp; 0 &amp; 0 &amp;| &amp; 0 \\
-0 &amp; 1 &amp; 1 &amp;| &amp; 2
-\end{bmatrix}</p></li>
-<li><p>Baris kedua semuanya nol, artinya persamaan kedua tidak memberikan informasi tambahan.</p></li>
-</ul>
-<p><strong>Langkah 3: Substitusi Balik</strong>
-Dari baris 3:
-\begin{align*}
-x_2 + x_3 &amp;= 2 \Rightarrow x_3 = 2 - x_2 \\
-\end{align*}
-Dari baris 1:
-\begin{align*}
-x_1 + 2x_2 + 3(2 - x_2) &amp;= 6 \\
-x_1 + 2x_2 + 6 - 3x_2 &amp;= 6 \\
-x_1 - x_2 &amp;= 0 \Rightarrow x_1 = x_2
-\end{align*}
-Solusi Umum:
-\begin{aligned}
-x_1 = x_2, \quad x_3 = 2 - x_2
-\end{aligned}</p>
-<p>Solusi berbentuk parametrik dengan <span class="math notranslate nohighlight">\(x_2\)</span> sebagai variabel bebas.</p>
-<hr class="docutils" />
-<p><strong>Contoh soal 2</strong>
-Selesaikan dengan menggunakan eleminasi gauss</p>
-<div class="math notranslate nohighlight">
-\[\begin{split}
-\begin{array}{cc}
-x_1 + x_2 + x_3=3\\
-2x_1 +x_3=5\\
-x_1 + 2x_2 =3\\
-\end{array}
-\end{split}\]</div>
-<p><strong>Jawaban:</strong>
-<strong>Langkah 1: Matriks Awal</strong>
+3 \\
+2 \\
+5
+\end{bmatrix}\)</span> temukan <span class="math notranslate nohighlight">\(\vec{u} \times \vec{v}\)</span>, dan verifikasi bahwa hasil kali silang ini tegak lurus terhadap baik <span class="math notranslate nohighlight">\(\vec{u}\)</span> maupun <span class="math notranslate nohighlight">\(\vec{v}\)</span>.</p>
+<p>Menggunakan <strong>Definisi</strong></p>
+<p><span class="math notranslate nohighlight">\(\vec{u} \times \vec{v} =
 \begin{bmatrix}
-1 &amp; 1 &amp; 1 &amp;| &amp; 3 \\
-2 &amp; 0 &amp; 1 &amp;| &amp; 5 \\
-0 &amp; 1 &amp; 1 &amp;| &amp; 3
-\end{bmatrix}</p>
-<p><strong>Langkah 2: Eliminasi</strong></p>
-<ul class="simple">
-<li><p>Baris 2 dikurangi 2 × Baris 1:
+\mathbf{u_2 v_3 - u_3v_2} \\
+\mathbf{-(u_1v_3-u_3v_1)} \\
+\mathbf{u_1 v_2 - u_2v_1}
+\end{bmatrix} =
 \begin{bmatrix}
-1 &amp; 1 &amp; 1 &amp;| &amp; 3 \\
-0 &amp; -2 &amp; -1 &amp;| &amp; -1 \\
-0 &amp; 1 &amp; 1 &amp;| &amp; 3
-\end{bmatrix}</p></li>
-<li><p>Baris 3 dikurangi Baris 1:
+(-1)(5) - (4)(2) \\
+-((2)(5) - (4)(3))\\
+(2)(2) - (-1)(3)
+\end{bmatrix} =
 \begin{bmatrix}
-1 &amp; 1 &amp; 1 &amp;| &amp; 3 \\
-0 &amp; -2 &amp; -1 &amp;| &amp; -1 \\
-0 &amp; 1 &amp; -1 &amp;| &amp; 0
-\end{bmatrix}</p></li>
-<li><p>Baris 3 dikali 2 dan ditambahkan ke Baris 2 untuk menghilangkan elemen (2,2):
+-5 -8 \\
+-(10-12)\\
+4+3
+\end{bmatrix}=
 \begin{bmatrix}
-1 &amp; 1 &amp; 1 &amp;| &amp; 3 \\
-0 &amp; 0 &amp; -3 &amp;| &amp; -1 \\
-0 &amp; 1 &amp; -1 &amp;| &amp; 0
-\end{bmatrix}</p></li>
-</ul>
-<p><strong>Langkah 3: Substitusi Balik</strong></p>
-<ul class="simple">
-<li><p>Dari baris 3: <span class="math notranslate nohighlight">\(x_2 - x_3 = 0 \Rightarrow x_2 = x_3.\)</span></p></li>
-<li><p>Dari baris 2: <span class="math notranslate nohighlight">\(-3x_3 = -1 \Rightarrow x_3 = \frac{1}{3},\)</span> sehingga <span class="math notranslate nohighlight">\(x_2 = \frac{1}{3}\)</span></p></li>
-<li><p>Dari baris 1: \begin{align*}
-x_1 + \frac{1}{3} + \frac{1}{3} &amp;= 3 \\
-x_1 + \frac{2}{3} &amp;= 3 \\
-x_1 &amp;= \frac{7}{3}
-\end{align*}</p></li>
-</ul>
-<p><strong>Solusi Akhir:</strong></p>
-<p>\begin{align*}
-(x_1, x_2, x_3) = \left( \frac{7}{3}, \frac{1}{3}, \frac{1}{3} \right)
-\end{align*}</p>
-<hr class="docutils" />
-<p><strong>Contoh soal 3</strong>
-Selesaikan dengan menggunakan eleminasi gauss</p>
-<div class="math notranslate nohighlight">
-\[\begin{split}
-\begin{array}{cc}
-2x_1 + 2x_2 =y\\
-x_1 +x_2=2\\
-\end{array}
-\end{split}\]</div>
-<p><strong>Jawaban:</strong></p>
-<p><strong>Langkah 1: Matriks</strong>
+-13 \\
+2\\
+7
+\end{bmatrix}\)</span></p>
+<p><strong>Jadi:</strong></p>
+<p><span class="math notranslate nohighlight">\(\vec{u} \times \vec{v} = \begin{bmatrix}
+-13 \\
+2\\
+7
+\end{bmatrix}\)</span></p>
+<p><strong>Verifikasi: Tegak Lurus</strong>
+Dua vektor tegak lurus jika hasil dot product-nya nol:</p>
+<ol class="arabic">
+<li><p>Cek apakah <span class="math notranslate nohighlight">\(\vec{u} \cdot (\vec{u} \times \vec{v}) = 0\)</span>:</p>
+<p><span class="math notranslate nohighlight">\(\vec{u} \cdot (\vec{u} \times \vec{v}) =\begin{bmatrix}
+2 \\
+-1 \\
+4
+\end{bmatrix} \cdot
 \begin{bmatrix}
-2 &amp; 2 &amp; | &amp; y \\
-1 &amp; 1 &amp; | &amp; 2
-\end{bmatrix}</p>
-<p><strong>Langkah 2: Eliminasi</strong></p>
-<ul class="simple">
-<li><p>Baris 1 dikurangi 2 × Baris 2:
+-13 \\
+2\\
+7
+\end{bmatrix}
+=(2)(−13)+(−1)(2)+(4)(7)=−26−2+28=0\)</span></p>
+<p>Tegak lurus terhadap <span class="math notranslate nohighlight">\(\vec{u}\)</span>.</p>
+</li>
+<li><p>Cek apakah <span class="math notranslate nohighlight">\(\vec{v} \cdot (\vec{u} \times \vec{v}) = 0\)</span>:</p>
+<p><span class="math notranslate nohighlight">\(\vec{v} \cdot (\vec{u} \times \vec{v}) =\begin{bmatrix}
+3 \\
+2 \\
+5
+\end{bmatrix} \cdot
 \begin{bmatrix}
-0 &amp; 0 &amp; | &amp; y-4 \\
-1 &amp; 1 &amp; | &amp; 2
-\end{bmatrix}</p></li>
-</ul>
-<p>Agar sistem punya solusi, harus <span class="math notranslate nohighlight">\(y-4=0 \Rightarrow y=4.\)</span></p>
-<p><strong>Solusi:</strong>
-Jika <span class="math notranslate nohighlight">\(y=4\)</span>, sistem menjadi:</p>
-<div class="math notranslate nohighlight">
-\[\begin{split}
-\begin{array}{cc}
-x_1 + x_2 =2\\
-\end{array}
-\end{split}\]</div>
-<p>Solusinya adalah:</p>
-<div class="math notranslate nohighlight">
-\[\begin{split}
-\begin{array}{cc}
-x_1 + 2 =x_2\\
-\end{array}
-\end{split}\]</div>
-<p>dengan <span class="math notranslate nohighlight">\(x_2\)</span> sebagai variabel bebas.</p>
-<hr class="docutils" />
-<p><strong>Contoh soal 4</strong>
-Selesaikan dengan menggunakan eleminasi gauss</p>
-<div class="math notranslate nohighlight">
-\[\begin{split}
-\begin{array}{cc}
-x_1 + x_2 =5\\
-x_1 +2x_3=6\\
-\end{array}
-\end{split}\]</div>
-<p><strong>Langkah 1: Matriks</strong>
+-13 \\
+2\\
+7
+\end{bmatrix}
+=(3)(−13)+(2)(2)+(5)(7)=−39+4+35=0\)</span></p>
+<p>Tegak lurus terhadap <span class="math notranslate nohighlight">\(\vec{v}\)</span>.</p>
+</li>
+</ol>
+<p><strong>Kesimpulan:</strong>
+Hasil kali silang dari</p>
+<p><span class="math notranslate nohighlight">\(\vec{u} =
 \begin{bmatrix}
-1 &amp; 1 &amp; 0 &amp;| &amp; 5 \\
-1 &amp; 0 &amp; 2 &amp;| &amp; 6
-\end{bmatrix}</p>
-<p><strong>Langkah 2: Eliminasi</strong></p>
-<ul class="simple">
-<li><p>Baris 2 dikurangi Baris 1:
+2 \\
+-1 \\
+4
+\end{bmatrix}\)</span> dan <span class="math notranslate nohighlight">\(\vec{v} =
 \begin{bmatrix}
-1 &amp; 1 &amp; 0 &amp;| &amp; 5 \\
-0 &amp; -1 &amp; 2 &amp;| &amp; 1
-\end{bmatrix}</p></li>
-<li><p>Kalikan Baris 2 dengan -1:
-\begin{bmatrix}
-1 &amp; 1 &amp; 0 &amp;| &amp; 5 \\
-0 &amp; 1 &amp; -2 &amp;| &amp; 1
-\end{bmatrix}</p></li>
-</ul>
-<p><strong>Langkah 3: Substitusi Balik</strong></p>
-<ul class="simple">
-<li><p>Dari Baris 2: <span class="math notranslate nohighlight">\(x_2 = 2x_3 - 1\)</span></p></li>
-<li><p>Dari Baris 1: <span class="math notranslate nohighlight">\(x_1 + (2x_3 - 1) = 5\)</span></p></li>
-</ul>
-<p>\begin{aligned}
-x_1 &amp;= 6 - 2x_3 \\
-x_2 &amp;= 2x_3 - 1
-\end{aligned}</p>
-<p>dengan <span class="math notranslate nohighlight">\(x_3\)</span> sebagai variabel bebas.</p>
+3 \\
+2 \\
+5
+\end{bmatrix}\)</span></p>
+<p>adalah:</p>
+<p><span class="math notranslate nohighlight">\(\vec{u} \times \vec{v} = \begin{bmatrix}
+-13 \\
+2\\
+7
+\end{bmatrix}\)</span></p>
+<p>dan hasil ini tegak lurus terhadap kedua vektor.</p>
 </section>
 </section>
 
@@ -618,22 +558,13 @@ x_2 &amp;= 2x_3 - 1
                   
 <div class="prev-next-area">
     <a class="left-prev"
-       href="Sistem%20Persamaan%20Linier.html"
+       href="Perkalian%20Titik%20%28DOT%20PRODUCT%29.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">Sistem persamaan linier</p>
+        <p class="prev-next-title">Perkalian titik (Dot product)</p>
       </div>
-    </a>
-    <a class="right-next"
-       href="Matriks (1).html"
-       title="next page">
-      <div class="prev-next-info">
-        <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Matriks</p>
-      </div>
-      <i class="fa-solid fa-angle-right"></i>
     </a>
 </div>
                 </footer>
@@ -651,8 +582,8 @@ x_2 &amp;= 2x_3 - 1
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#operasi-baris-elemeneter">Operasi Baris Elemeneter</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#eleminasi-gauss">Eleminasi Gauss</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#definisi-hasil-kali-silang">Definisi Hasil Kali Silang</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#contoh-menghitung-hasil-kali-silang">Contoh Menghitung Hasil Kali Silang</a></li>
 </ul>
   </nav></div>
 
@@ -666,7 +597,7 @@ x_2 &amp;= 2x_3 - 1
   
   <div class="footer-item">
     
-    <p class="component-author">
+<p class="component-author">
 By Rian Renaldy (240411100053)
 </p>
 
@@ -677,7 +608,7 @@ By Rian Renaldy (240411100053)
 
   <p class="copyright">
     
-      © Copyright 2025
+      © Copyright 2025.
       <br/>
     
   </p>
