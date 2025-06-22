@@ -1,0 +1,875 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="./" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Apa Itu SVD &#8212; My sample book</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+
+  
+  <link href="_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="_static/styles/sphinx-book-theme.css?v=eba8b062" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-design.min.css?v=95c83b7e" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+    <script src="_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="_static/doctools.js?v=9a2dae69"></script>
+    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="_static/copybutton.js?v=f281be69"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="_static/togglebutton.js?v=4a39c7ea"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'Singular Value Decomposition (SVD)';</script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="prev" title="Perkalian Silang (Cross Product)" href="Kali%20Silang%20%28Cross%20Product%29.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="intro.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="_static/logo.png" class="logo__image only-light" alt="My sample book - Home"/>
+    <script>document.write(`<img src="_static/logo.png" class="logo__image only-dark" alt="My sample book - Home"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="intro.html">
+                    Welcome to your Jupyter Book
+                </a>
+            </li>
+        </ul>
+        <ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="Sistem%20Persamaan%20Linier.html">Sistem Persamaan Linier</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Penyelesaian Sistem Persamaan Linier.html">Penyelesaian Sistem Persamaan Linier</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Matriks (1).html">Matriks</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Transformasi Linier (1).html">Pembuktian Transformasi Linier</a></li>
+<li class="toctree-l1"><a class="reference internal" href="transformasi.html">Refleksi</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Eigenvalues And Eigenvector.html">Eigenvalues And Eigenvector</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Perkalian Titik (DOT PRODUCT).html">Perkalian Titik (Dot product)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Kali Silang (Cross Product).html">Perkalian Silang (Cross Product)</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Singular Value Decomposition (SVD)</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/executablebooks/jupyter-book" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2FSingular Value Decomposition (SVD).html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="_sources/Singular Value Decomposition (SVD).ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Apa Itu SVD</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#kegunaan-svd">Kegunaan SVD</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#bagaimana-formula-svd">Bagaimana formula SVD</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#penjelasan-komponen">Penjelasan Komponen:</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#bentuk-matriks-diagonal">Bentuk Matriks Diagonal <span class="math notranslate nohighlight">\(Σ\)</span>:</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#latihan">Latihan</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#soal-1">Soal 1</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#soal-2">Soal 2</a></li>
+</ul>
+</li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="apa-itu-svd">
+<h1>Apa Itu SVD<a class="headerlink" href="#apa-itu-svd" title="Link to this heading">#</a></h1>
+<p>SVD (Singular Value Decomposition) adalah metode yang digunakan dalam aljabar linear untuk menguraikan matriks menjadi tiga matriks yang lebih sederhana, membuatnya lebih mudah untuk dianalisis dan dimanipulasi.</p>
+<p><strong>Rumus Umum SVD</strong>
+Jika diberikan sebuah matriks <span class="math notranslate nohighlight">\(A\)</span> berukuran <span class="math notranslate nohighlight">\(m \times n\)</span>, maka SVD menulisnya sebagai:
+$<span class="math notranslate nohighlight">\(A=UΣV^T\)</span>$</p>
+<p><strong>Dimana:</strong></p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(A\)</span>: Matriks asli berukuran <span class="math notranslate nohighlight">\(m×n\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(U\)</span>: Matriks ortogonal berukuran <span class="math notranslate nohighlight">\(m×m\)</span> (vektor-vektor kolomnya disebut left <strong>singular vectors</strong>)</p></li>
+<li><p><span class="math notranslate nohighlight">\(Σ\)</span> Matriks diagonal berukuran <span class="math notranslate nohighlight">\(m×n\)</span> yang berisi nilai-nilai singular (singular values)</p></li>
+<li><p><span class="math notranslate nohighlight">\(V^T\)</span>: Transpos dari matriks ortogonal <span class="math notranslate nohighlight">\(V\)</span> berukuran <span class="math notranslate nohighlight">\(n×n\)</span> (right singular vectors)</p></li>
+</ul>
+<section id="kegunaan-svd">
+<h2>Kegunaan SVD<a class="headerlink" href="#kegunaan-svd" title="Link to this heading">#</a></h2>
+<ol class="arabic simple">
+<li><p>Reduksi Dimensi (Dimensionality Reduction)</p>
+<ul class="simple">
+<li><p>SVD digunakan untuk menyederhanakan data berdimensi tinggi menjadi bentuk yang lebih ringkas tanpa kehilangan informasi penting.</p></li>
+<li><p>Contoh: PCA (Principal Component Analysis) menggunakan SVD untuk mencari komponen utama data.</p></li>
+</ul>
+</li>
+<li><p>Machine Learning &amp; Data Science
+Mengurangi kompleksitas data (feature selection)</p>
+<ul class="simple">
+<li><p>Digunakan dalam deteksi anomali, clustering, dan fitur ekstraksi</p></li>
+<li><p>Digunakan untuk mempercepat perhitungan model pembelajaran mesin</p></li>
+</ul>
+</li>
+<li><p>Kompresi Gambar</p>
+<ul class="simple">
+<li><p>Gambar (yang bisa dianggap sebagai matriks) bisa didekomposisi menggunakan SVD.</p></li>
+<li><p>Dengan hanya menyimpan sebagian nilai singular (yang besar), gambar tetap bisa direkonstruksi dengan ukuran file yang lebih kecil, tanpa kehilangan kualitas secara signifikan.</p></li>
+</ul>
+</li>
+<li><p>Pencarian Informasi &amp; Teks (Information Retrieval)</p>
+<ul class="simple">
+<li><p>Dalam bidang NLP (Natural Language Processing), SVD digunakan dalam LSA (Latent Semantic Analysis) untuk menemukan hubungan tersembunyi antar kata dan dokumen.</p></li>
+</ul>
+</li>
+<li><p>Sistem Rekomendasi</p>
+<ul class="simple">
+<li><p>SVD digunakan dalam collaborative filtering (misalnya di Netflix, YouTube, Shopee) untuk merekomendasikan item berdasarkan pola interaksi pengguna.</p></li>
+<li><p>Contoh: memprediksi film yang disukai oleh pengguna berdasarkan preferensi pengguna lain.</p></li>
+</ul>
+</li>
+<li><p>Solusi Matriks dan Pseudoinvers</p>
+<ul class="simple">
+<li><p>SVD membantu menyelesaikan sistem persamaan linear, terutama jika matriksnya tidak berbentuk persegi atau singular (tidak bisa dibalik).</p></li>
+<li><p>Digunakan untuk menghitung pseudoinvers Moore–Penrose.</p></li>
+</ul>
+</li>
+<li><p>Pengolahan Sinyal dan Audio</p>
+<ul class="simple">
+<li><p>Menghapus noise dari data sinyal atau suara</p></li>
+<li><p>Digunakan dalam denoising, signal compression, dan audio separation</p></li>
+</ul>
+</li>
+<li><p>Kontrol dan Sistem Dinamik</p>
+<ul class="simple">
+<li><p>Digunakan dalam kontrol sistem (control system engineering) untuk analisis kestabilan dan respons sistem</p></li>
+</ul>
+</li>
+</ol>
+</section>
+<section id="bagaimana-formula-svd">
+<h2>Bagaimana formula SVD<a class="headerlink" href="#bagaimana-formula-svd" title="Link to this heading">#</a></h2>
+<p>Misalkan kita punya sebuah matriks A berukuran m × n (dengan m ≥ n atau m ≤ n), maka SVD dari A dapat dituliskan sebagai:</p>
+<div class="math notranslate nohighlight">
+\[A = U \Sigma V^T\]</div>
+<section id="penjelasan-komponen">
+<h3>Penjelasan Komponen:<a class="headerlink" href="#penjelasan-komponen" title="Link to this heading">#</a></h3>
+<ol class="arabic simple">
+<li><p>A: Matriks asli berukuran m × n.</p></li>
+<li><p>U: Matriks ortogonal berukuran m × m. Kolom-kolomnya adalah vektor eigen dari <span class="math notranslate nohighlight">\(AA^T\)</span>.</p></li>
+<li><p><span class="math notranslate nohighlight">\(Σ\)</span> (Sigma): Matriks diagonal berukuran m × n, berisi nilai singular dari A yang diurutkan dari besar ke kecil. Nilai ini adalah akar dari eigenvalue matriks <span class="math notranslate nohighlight">\(A^TA\)</span> atau <span class="math notranslate nohighlight">\(AA^T\)</span>.</p></li>
+<li><p>V: Matriks ortogonal berukuran n × n. Kolom-kolomnya adalah vektor eigen dari <span class="math notranslate nohighlight">\(A^TA\)</span>.</p></li>
+<li><p><span class="math notranslate nohighlight">\(V^T\)</span>: Transpos dari <span class="math notranslate nohighlight">\(V\)</span>.</p></li>
+</ol>
+</section>
+<section id="bentuk-matriks-diagonal">
+<h3>Bentuk Matriks Diagonal <span class="math notranslate nohighlight">\(Σ\)</span>:<a class="headerlink" href="#bentuk-matriks-diagonal" title="Link to this heading">#</a></h3>
+<div class="math notranslate nohighlight">
+\[\begin{split}\Sigma =
+\begin{bmatrix}
+\sigma_1 &amp; 0 &amp; 0 &amp; \cdots &amp; 0 \\
+0 &amp; \sigma_2 &amp; 0 &amp; \cdots &amp; 0 \\
+\vdots &amp; \vdots &amp; \ddots &amp; &amp; \vdots \\
+0 &amp; 0 &amp; \cdots &amp; \sigma_r &amp; 0 \\
+0 &amp; 0 &amp; \cdots &amp; 0 &amp; 0 \\
+\end{bmatrix}\end{split}\]</div>
+<p><strong>dengan:</strong></p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(\sigma_1 \geq \sigma_2 \geq \dots \geq \sigma_r &gt; 0\)</span> adalah nilai singular (positive).</p></li>
+<li><p><span class="math notranslate nohighlight">\(r\)</span> adalah rank dari matriks A.</p></li>
+</ul>
+<p>Misal A adalah matriks 2×2:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}A = \begin{bmatrix}
+3 &amp; 1 \\
+1 &amp; 3
+\end{bmatrix}\end{split}\]</div>
+<p>Langkah:</p>
+<ol class="arabic simple">
+<li><p>Hitung eigenvalue dan eigenvector dari <span class="math notranslate nohighlight">\(ATA\)</span> dan  <span class="math notranslate nohighlight">\(AA^T\)</span></p></li>
+<li><p>Ambil akar dari eigenvalue untuk mendapat nilai singular (isi dari Σ).</p></li>
+<li><p>Bangun matriks U dan V dari eigenvector.</p></li>
+</ol>
+</section>
+</section>
+<section id="latihan">
+<h2>Latihan<a class="headerlink" href="#latihan" title="Link to this heading">#</a></h2>
+<section id="soal-1">
+<h3>Soal 1<a class="headerlink" href="#soal-1" title="Link to this heading">#</a></h3>
+<ol class="arabic">
+<li><p><strong>Contoh Sederhana:</strong>
+Misal A adalah matriks 2×2:</p>
+<p><strong>CONTOH MATRIKS:</strong>
+Misalkan:</p>
+<p><span class="math notranslate nohighlight">\(A = \begin{bmatrix}
+3 &amp; 1 \\
+1 &amp; 3
+\end{bmatrix}\)</span></p>
+<p>Ukuran <span class="math notranslate nohighlight">\(A: 2×2\)</span></p>
+<p><strong>LANGKAH 1: Hitung Eigenvalue dan Eigenvektor dari <span class="math notranslate nohighlight">\(A^T A\)</span></strong></p>
+<p>Karena SVD menggunakan <span class="math notranslate nohighlight">\(A^T A\)</span> , kita hitung dulu:</p>
+<p><span class="math notranslate nohighlight">\(A^T A = \begin{bmatrix}
+3 &amp; 1 \\
+1 &amp; 3
+\end{bmatrix}
+\begin{bmatrix}
+3 &amp; 1 \\
+1 &amp; 3
+\end{bmatrix}
+= \begin{bmatrix}
+10 &amp; 6 \\
+6 &amp; 10
+\end{bmatrix}\)</span></p>
+<p>Lalu cari <span class="math notranslate nohighlight">\(\lambda\)</span> dari <span class="math notranslate nohighlight">\(A^T A\)</span>:</p>
+<p><span class="math notranslate nohighlight">\(det(A^T A - \lambda I) = 0\)</span></p>
+<p><span class="math notranslate nohighlight">\(\Rightarrow \left| \begin{bmatrix}
+10 - \lambda &amp; 6 \\
+6 &amp; 10 - \lambda
+\end{bmatrix} \right| = 0
+\Rightarrow (10 - \lambda)^2 - 36 = 0 \Rightarrow \lambda^2 - 20\lambda + 64 = 0
+\Rightarrow \lambda_1 = 16, \lambda_2 = 4\)</span></p>
+<p><strong>LANGKAH 2: Hitung Singular Value</strong></p>
+<p><span class="math notranslate nohighlight">\(\sigma_1 = \sqrt{16} = 4, \quad \sigma_2 = \sqrt{4} = 2\)</span></p>
+<p>Maka:</p>
+<p><span class="math notranslate nohighlight">\(\Sigma = \begin{bmatrix}
+4 &amp; 0 \\
+0 &amp; 2
+\end{bmatrix}\)</span></p>
+<p><strong>LANGKAH 3: Hitung V dari Eigenvektor <span class="math notranslate nohighlight">\(A^T A\)</span></strong></p>
+<p>Untuk <span class="math notranslate nohighlight">\(\lambda\)</span> = 16:</p>
+<p><span class="math notranslate nohighlight">\((A^T A - 16 I)\mathbf{v} = 0 \Rightarrow \left[ \begin{bmatrix}
+-6 &amp; 6 \\
+6 &amp; -6
+\end{bmatrix} \right] \mathbf{v} = 0 \Rightarrow v_1 = \begin{bmatrix}
+1 \\
+1
+\end{bmatrix}\)</span></p>
+<p>Untuk <span class="math notranslate nohighlight">\(\lambda\)</span> = 4:</p>
+<p><span class="math notranslate nohighlight">\((A^T A - 4 I) \mathbf{v} = 0 \Rightarrow \left[ \begin{bmatrix}
+6 &amp; 6 \\
+6 &amp; 6
+\end{bmatrix} \right] \mathbf{v} = 0 \Rightarrow v_2 = \begin{bmatrix}
+-1 \\
+1
+\end{bmatrix}\)</span></p>
+<p>Normalisasi (buat panjangnya 1):</p>
+<p><span class="math notranslate nohighlight">\(\mathbf{v}_1 = \frac{1}{\sqrt{2}} \begin{bmatrix}
+1 \\
+1
+\end{bmatrix}, \quad
+\mathbf{v}_2 = \frac{1}{\sqrt{2}} \begin{bmatrix}
+-1 \\
+1
+\end{bmatrix}\)</span></p>
+<p>Jadi:</p>
+<p><span class="math notranslate nohighlight">\(\mathbf{V} = \left[ \begin{bmatrix}
+\frac{1}{\sqrt{2}} \\
+\frac{1}{\sqrt{2}}
+\end{bmatrix} \quad
+\begin{bmatrix}
+-\frac{1}{\sqrt{2}} \\
+\frac{1}{\sqrt{2}}
+\end{bmatrix} \right]\)</span></p>
+<p><strong>LANGKAH 4: Hitung U dari rumus:</strong></p>
+<p><span class="math notranslate nohighlight">\(u_i = \frac{1}{\sigma_i} A v_i\)</span></p>
+<p>Untuk <span class="math notranslate nohighlight">\(u1\)</span>:</p>
+<p><span class="math notranslate nohighlight">\(\begin{aligned}
+u_1 &amp;= \frac{1}{4} A \cdot \frac{1}{\sqrt{2}} \begin{bmatrix} 1 \\ 1 \end{bmatrix}
+= \frac{1}{4 \sqrt{2}} \left[ \begin{bmatrix} 3+1 \\ 1+3 \end{bmatrix} \right]
+= \frac{1}{\sqrt{2}} \begin{bmatrix} 1 \\ 1 \end{bmatrix}
+\end{aligned}\)</span></p>
+<p>Untuk <span class="math notranslate nohighlight">\(u2\)</span>:</p>
+<p><span class="math notranslate nohighlight">\(\begin{aligned}
+u_2 &amp;= \frac{1}{2} A \cdot \frac{1}{\sqrt{2}} \begin{bmatrix} -1 \\ 1 \end{bmatrix}
+= \frac{1}{2 \sqrt{2}} \left[ \begin{bmatrix} -3+1 \\ -1+3 \end{bmatrix} \right]
+= \frac{1}{\sqrt{2}} \begin{bmatrix} -1 \\ 1 \end{bmatrix}
+\end{aligned}\)</span></p>
+<p>Jadi</p>
+<p><span class="math notranslate nohighlight">\(\mathbf{U} = \left[ \begin{bmatrix}
+\frac{1}{\sqrt{2}} \\
+\frac{1}{\sqrt{2}}
+\end{bmatrix} \quad
+\begin{bmatrix}
+-\frac{1}{\sqrt{2}} \\
+\frac{1}{\sqrt{2}}
+\end{bmatrix} \right]\)</span></p>
+<p><strong>HASIL AKHIR: SVD dari A</strong></p>
+<p><span class="math notranslate nohighlight">\(A = U \Sigma V^{T}\)</span></p>
+<p>Dengan:</p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(\mathbf{U} = \begin{bmatrix}
+\frac{1}{\sqrt{2}} &amp; -\frac{1}{\sqrt{2}} \\
+\frac{1}{\sqrt{2}} &amp; \frac{1}{\sqrt{2}}
+\end{bmatrix}\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\boldsymbol{\Sigma} = \begin{bmatrix}
+4 &amp; 0 \\
+0 &amp; 2
+\end{bmatrix}\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\mathbf{V}^T = \begin{bmatrix}
+\frac{1}{\sqrt{2}} &amp; \frac{1}{\sqrt{2}} \\
+-\frac{1}{\sqrt{2}} &amp; \frac{1}{\sqrt{2}}
+\end{bmatrix}\)</span></p></li>
+</ul>
+</li>
+</ol>
+</section>
+<section id="soal-2">
+<h3>Soal 2<a class="headerlink" href="#soal-2" title="Link to this heading">#</a></h3>
+<ol class="arabic" start="2">
+<li><p><strong>Diberikan sebuah matriks:</strong></p>
+<p><span class="math notranslate nohighlight">\(A = \begin{bmatrix}
+3 &amp; 7 \\
+2 &amp; 5 \\
+4 &amp; 3 \\
+1 &amp; 1
+\end{bmatrix}\)</span></p>
+<p><strong>LANGKAH 1: Hitung <span class="math notranslate nohighlight">\(A^TA\)</span></strong></p>
+<p><span class="math notranslate nohighlight">\(A^T = 
+\begin{bmatrix}
+3 &amp; 2 &amp; 4 &amp; 1 \\
+7 &amp; 5 &amp; 3 &amp; 1
+\end{bmatrix}\)</span></p>
+<p><span class="math notranslate nohighlight">\(A^T A = 
+\begin{bmatrix}
+3 &amp; 2 &amp; 4 &amp; 1 \\
+7 &amp; 5 &amp; 3 &amp; 1
+\end{bmatrix}
+\begin{bmatrix}
+3 &amp; 7 \\
+2 &amp; 5 \\
+4 &amp; 3 \\
+1 &amp; 1
+\end{bmatrix}\)</span></p>
+<p>Hitung hasilnya:</p>
+<p><span class="math notranslate nohighlight">\(A^T A = 
+\begin{bmatrix}
+3^2 + 2^2 + 4^2 + 1^2 &amp; 3 \cdot 7 + 2 \cdot 5 + 4 \cdot 3 + 1 \cdot 1 \\
+7 \cdot 3 + 5 \cdot 2 + 3 \cdot 4 + 1 \cdot 1 &amp; 7^2 + 5^2 + 3^2 + 1^2
+\end{bmatrix}\)</span></p>
+<p><span class="math notranslate nohighlight">\(= 
+\begin{bmatrix}
+9 + 4 + 16 + 1 &amp; 21 + 10 + 12 + 1 \\
+21 + 10 + 12 + 1 &amp; 49 + 25 + 9 + 1
+\end{bmatrix}
+= 
+\begin{bmatrix}
+30 &amp; 44 \\
+44 &amp; 84
+\end{bmatrix}\)</span></p>
+<p><strong>LANGKAH 2: Hitung eigenvalue <span class="math notranslate nohighlight">\(𝜆\)</span> dari <span class="math notranslate nohighlight">\(A^TA\)</span></strong></p>
+<p><span class="math notranslate nohighlight">\(\det\left(A^T A - \lambda I\right) = 
+\left|
+\begin{array}{cc}
+30 - \lambda &amp; 44 \\
+44 &amp; 84 - \lambda
+\end{array}
+\right|
+= (30 - \lambda)(84 - \lambda) - 44^2\)</span></p>
+<p><span class="math notranslate nohighlight">\(= \lambda^2 - 114\lambda + (30)(84) - 1936 
+= \lambda^2 - 114\lambda + 2520 - 1936 
+= \lambda^2 - 114\lambda + 584\)</span></p>
+<p>Gunakan rumus kuadrat:</p>
+<p><span class="math notranslate nohighlight">\(\lambda = \frac{114 \pm \sqrt{114^2 - 4 \cdot 584}}{2}
+= \frac{114 \pm \sqrt{12996 - 2336}}{2}
+= \frac{114 \pm \sqrt{10660}}{2}\)</span></p>
+<p><span class="math notranslate nohighlight">\(\sqrt{10660} \approx 103.25 
+\Rightarrow \lambda_1 \approx \frac{114 + 103.25}{2} = 108.625, 
+\quad \lambda_2 \approx \frac{114 - 103.25}{2} = 5.375\)</span></p>
+<p><strong>LANGKAH 3: Hitung singular values</strong></p>
+<p><span class="math notranslate nohighlight">\(\sigma_1 = \sqrt{108.625} \approx 10.42, \quad 
+\sigma_2 = \sqrt{5.375} \approx 2.32\)</span></p>
+<p><span class="math notranslate nohighlight">\(\Rightarrow \Sigma = 
+\begin{bmatrix}
+10.42 &amp; 0 \\
+0 &amp; 2.32 \\
+0 &amp; 0 \\
+0 &amp; 0
+\end{bmatrix}\)</span></p>
+<p><strong>LANGKAH 4: Hitung eigenvektor dari <span class="math notranslate nohighlight">\(A^TA\)</span> → matriks <span class="math notranslate nohighlight">\(V\)</span></strong>
+Gunakan metode substitusi atau numerik (bisa saya bantu jika ingin lanjut hitung manual), tapi secara garis besar:</p>
+<p><span class="math notranslate nohighlight">\(V = [v_1 v_2]\)</span>, dengan <span class="math notranslate nohighlight">\(v_1 v_2\)</span> adalah eigenvektor dari <span class="math notranslate nohighlight">\(A^TA\)</span></p>
+<p>Setelah didapatkan <span class="math notranslate nohighlight">\(V\)</span>, bisa dihitung:</p>
+<p><strong>LANGKAH 5: Hitung <span class="math notranslate nohighlight">\(U\)</span> dari rumus:</strong></p>
+<p><span class="math notranslate nohighlight">\(u_i = \frac{1}{\sigma_i} A v_i \quad \text{untuk } i = 1, 2\)</span></p>
+<p>Hasil <span class="math notranslate nohighlight">\(U\)</span> akan berupa matriks <span class="math notranslate nohighlight">\(4 \times 2\)</span>, kemudian bisa dilengkapi ke ukuran <span class="math notranslate nohighlight">\(4 \times 2\)</span> dengan Gram-Schmidt orthonormalization jika ingin bentuk lengkap.</p>
+<p><strong>LANGKAH 6: Hasil Akhir SVD</strong></p>
+<p><span class="math notranslate nohighlight">\(A = U \Sigma V^T\)</span></p>
+<ul>
+<li><p>Matriks <span class="math notranslate nohighlight">\(U\)</span> (4×4):</p>
+<p><span class="math notranslate nohighlight">\(U = \begin{bmatrix}
+-0.7267 &amp; -0.3453 &amp; -0.5739 &amp; -0.1530 \\
+-0.5124 &amp; -0.3004 &amp;  0.7924 &amp;  0.1392 \\
+-0.4386 &amp;  0.8736 &amp;  0.0817 &amp; -0.1945 \\
+-0.1306 &amp;  0.1657 &amp; -0.1900 &amp;  0.9588
+\end{bmatrix}\)</span></p>
+</li>
+<li><p>Matriks <span class="math notranslate nohighlight">\(Σ\)</span> (4×2):
+(Singular values diletakkan di diagonal)</p>
+<p><span class="math notranslate nohighlight">\(\Sigma = \begin{bmatrix}
+10.4223 &amp; 0 \\
+0 &amp; 2.3187 \\
+0 &amp; 0 \\
+0 &amp; 0
+\end{bmatrix}\)</span></p>
+</li>
+<li><p>Matriks <span class="math notranslate nohighlight">\(V^T\)</span> (2×2):</p>
+<p><span class="math notranslate nohighlight">\(V^T = \begin{bmatrix}
+-0.4884 &amp; -0.8726 \\
+0.8726 &amp; -0.4884
+\end{bmatrix}\)</span></p>
+</li>
+</ul>
+<p>Maka:</p>
+<p><span class="math notranslate nohighlight">\(A = U \cdot \Sigma \cdot V^T\)</span></p>
+</li>
+</ol>
+</section>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="Kali%20Silang%20%28Cross%20Product%29.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Perkalian Silang (Cross Product)</p>
+      </div>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#kegunaan-svd">Kegunaan SVD</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#bagaimana-formula-svd">Bagaimana formula SVD</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#penjelasan-komponen">Penjelasan Komponen:</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#bentuk-matriks-diagonal">Bentuk Matriks Diagonal <span class="math notranslate nohighlight">\(Σ\)</span>:</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#latihan">Latihan</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#soal-1">Soal 1</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#soal-2">Soal 2</a></li>
+</ul>
+</li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Rian Renaldy (240411100053)
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2025.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>
